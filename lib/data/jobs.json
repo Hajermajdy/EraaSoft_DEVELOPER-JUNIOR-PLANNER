@@ -1,0 +1,645 @@
+{
+    "data":[
+        {
+            "title": "Security Software Engineer",
+            "company": "Skyward Federal LLC",
+            "salary": "$100,000 - $155,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Colorado Springs, CO"
+        },
+        {
+            "title": "Real-Time, Embedded Software Engineer",
+            "company": "Checkmate Partners",
+            "salary": "$100,000 - $200,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "San Francisco Bay Area, CA"
+            
+        },
+        {
+            "title": "Embedded Software Developer - C/C++ Experience Required",
+            "company": "Real Time Automation",
+            "salary": "$80,000 - $100,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Fort Atkinson, WI"
+        },
+        {
+            "title": "Software Engineer (Go)",
+            "company": "Subspace",
+            "salary": "",
+            "rating": "3",
+            "review_count": "1",
+            "types": "",
+            "location": "Texas"
+        },
+        {
+            "title": "Full Stack Engineer",
+            "company": "CyberCoders",
+            "salary": "$120,000 - $160,000 a year",
+            "rating": "3.4",
+            "review_count": "47",
+            "types": "Full-time",
+            "location": "Denver, CO"
+        },
+        {
+            "title": "Software Engineer \u2014 Front-end, Matcha",
+            "company": "0x",
+            "salary": "",
+            "rating": "0",
+            "review_count": "0",
+            "types": "",
+            "location": "California"
+        },
+        {
+            "title": "Head of Site Reliability Engineering",
+            "company": "S&P Global",
+            "salary": "$148,200 - $338,600 a year",
+            "rating": "3.9",
+            "review_count": "1354",
+            "types": "",
+            "location": "Princeton, NJ"
+        },
+        {
+            "title": "DevOps Engineer",
+            "company": "NICE CXone",
+            "salary": "",
+            "rating": "4",
+            "review_count": "6",
+            "types": "Full-time",
+            "location": "Rochester, NY",
+            "No": "11"
+        },
+        {
+            "title": "Solutions Engineer, Software",
+            "company": "Liberty Mutual Insurance",
+            "salary": "$150,000 - $200,000 a year",
+            "rating": "3.6",
+            "review_count": "4540",
+            "types": "",
+            "location": "Dover, NH"
+        },
+        {
+            "title": "Full Stack Developer",
+            "company": "Goldtech Apps, LLC",
+            "salary": "",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time, Part-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Senior Full Stack PHP Engineer",
+            "company": "Sourcetoad",
+            "salary": "",
+            "rating": "4.7",
+            "review_count": "6",
+            "types": "Full-time",
+            "location": "Tampa, FL"
+        },
+        {
+            "title": "Senior Security Deployment Engineer",
+            "company": "Red River",
+            "salary": "$150,000 a year",
+            "rating": "3.4",
+            "review_count": "16",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Software Senior Engineer \u2013 CloudIQ (U.S. Remote)",
+            "company": "Dell Technologies",
+            "salary": "",
+            "rating": "4",
+            "review_count": "10476",
+            "types": "",
+            "location": "New York, NY"
+        },
+        {
+            "title": "Software Engineer (Clearance Required)",
+            "company": "LOCKHEED MARTIN CORPORATION",
+            "salary": "$3,000 a week",
+            "rating": "4",
+            "review_count": "8633",
+            "types": "",
+            "location": "Annapolis Junction, MD"
+        },
+        {
+            "title": "Cyber Security Operation Center Manager (SOC)",
+            "company": "Goliath Solutions Group",
+            "salary": "$15 - $20 an hour",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Fairview, TX"
+        },
+        {
+            "title": "Software Engineer",
+            "company": "Netpace, Inc.",
+            "salary": "",
+            "rating": "0",
+            "review_count": "0",
+            "types": "",
+            "location": "San Ramon, CA"
+        },
+        {
+            "title": "Full-Stack Software Engineer",
+            "company": "Indeed",
+            "salary": "$86,000 - $124,000 a year",
+            "rating": "4.3",
+            "review_count": "824",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Sr. Software Developer (DevX)",
+            "company": "Bandwidth",
+            "salary": "",
+            "rating": "3.9",
+            "review_count": "23",
+            "types": "",
+            "location": "Raleigh, NC"
+        },
+        {
+            "title": "DevOps Engineer - Very Profitable Start-up",
+            "company": "TechTalent NW",
+            "salary": "$125,000 - $170,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Bellevue, WA"
+        },
+        {
+            "title": "Embedded Software Engineer",
+            "company": "PRIVATE",
+            "salary": "Up to $180,000 a year",
+            "rating": "4",
+            "review_count": "29",
+            "types": "Full-time, Contract",
+            "location": "Remote"
+        },
+        {
+            "title": "Software Engineer (Option for remote)",
+            "company": "Custom Ink",
+            "salary": "",
+            "rating": "3.4",
+            "review_count": "139",
+            "types": "Full-time",
+            "location": "Raleigh, NC"
+        },
+        {
+            "title": "Lead Software/Java Engineer",
+            "company": "Bectran",
+            "salary": "$90,000 - $130,000 a year",
+            "rating": "1.5",
+            "review_count": "4",
+            "types": "Full-time",
+            "location": "Chicago, IL"
+        },
+        {
+            "title": "Senior Software Engineer",
+            "company": "College Auto Sales of Florida",
+            "salary": "$105,271 - $126,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Miami Lakes, FL"
+        },
+        {
+            "title": "Production Support Software Engineer - Salesforce.org",
+            "company": "Salesforce",
+            "salary": "$121,800 a year",
+            "rating": "4.3",
+            "review_count": "767",
+            "types": "Full-time",
+            "location": "Texas"
+        },
+        {
+            "title": "Senior Fullstack Engineer",
+            "company": "Digital On Us",
+            "salary": "",
+            "rating": "4",
+            "review_count": "2",
+            "types": "",
+            "location": "Texas City, TX"
+        },
+        {
+            "title": "Software Programmer - Java",
+            "company": "Flux Resources",
+            "salary": "$71 - $77 an hour",
+            "rating": "4.1",
+            "review_count": "7",
+            "types": "Full-time, Contract",
+            "location": "Portland, OR"
+        },
+        {
+            "title": "Software Engineer",
+            "company": "Salud Revenue Partners",
+            "salary": "$52,000 - $110,000 a year",
+            "rating": "5",
+            "review_count": "2",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Integrations & Automation Engineer (Back End)",
+            "company": "Friedkin Companies, Inc.",
+            "salary": "",
+            "rating": "3.6",
+            "review_count": "31",
+            "types": "",
+            "location": "Houston, TX"
+        },
+        {
+            "title": "Solutions Engineer, Software",
+            "company": "Liberty Mutual Insurance",
+            "salary": "$128,200 - $177,600 a year",
+            "rating": "3.6",
+            "review_count": "4540",
+            "types": "",
+            "location": "Remote"
+        },
+        {
+            "title": "Real-Time, Embedded Software Engineer",
+            "company": "Checkmate Partners",
+            "salary": "$100,000 - $200,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "San Jose, CA"
+        },
+        {
+            "title": "Software Engineer - Production Support - CCE - Mulesoft",
+            "company": "Salesforce",
+            "salary": "$121,800 a year",
+            "rating": "4.3",
+            "review_count": "767",
+            "types": "Full-time",
+            "location": "Denver, CO"
+        },
+        {
+            "title": "Software Engineer, Backend - Remote",
+            "company": "Project Admission",
+            "salary": "$105,000 - $120,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Nashville, TN"
+        },
+        {
+            "title": "Sales Lead Generation for Web Development Business (Independent Contractor)",
+            "company": "Buddy Web Design & Development",
+            "salary": "",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time, Part-time, Contract",
+            "location": "Bremerton, WA"
+        },
+        {
+            "title": "Senior Software Engineer - Enterprise Team (Full-Stack/Front-Leaning)",
+            "company": "Indeed",
+            "salary": "$109,000 - $159,000 a year",
+            "rating": "4.3",
+            "review_count": "824",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Lead Software Engineer - Collector",
+            "company": "Athenahealth",
+            "salary": "",
+            "rating": "2.9",
+            "review_count": "83",
+            "types": "Full-time",
+            "location": "Watertown, MA"
+        },
+        {
+            "title": "Front-End Engineer",
+            "company": "Clipcentric Inc.",
+            "salary": "From $20 an hour",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time, Part-time",
+            "location": "Albany, NY"
+        },
+        {
+            "title": "Senior Web Developer",
+            "company": "FreeRateUpdate.com LLC",
+            "salary": "$100,000 - $120,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Chadds Ford, PA"
+        },
+        {
+            "title": "Contact Center Application Developer",
+            "company": "Accenture",
+            "salary": "",
+            "rating": "4",
+            "review_count": "20729",
+            "types": "Full-time",
+            "location": "Norwalk, CA"
+        },
+        {
+            "title": "Principal Software Engineer",
+            "company": "OpenText",
+            "salary": "",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Boston, MA"
+        },
+        {
+            "title": "iOS SDK Software engineer",
+            "company": "Socket Mobile, Inc.",
+            "salary": "From $106,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Remote"  
+        },
+        {
+            "title": "Automation/Test Engineer",
+            "company": "Schneider Electric",
+            "salary": "",
+            "rating": "3.9",
+            "review_count": "3830",
+            "types": "Full-time",
+            "location": "Tualatin, OR"
+        },
+        {
+            "title": "Senior Site Reliability Engineer",
+            "company": "Apto Payments",
+            "salary": "$120,000 - $180,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Software Engineer (Returnship) - Opportunity for Working Remotely Atlanta, GA",
+            "company": "VMware",
+            "salary": "",
+            "rating": "4.1",
+            "review_count": "920",
+            "types": "Full-time",
+            "location": "Atlanta, GA"
+        },
+        {
+            "title": "Web Developer",
+            "company": "PETA Foundation",
+            "salary": "From $75,000 a year",
+            "rating": "4.1",
+            "review_count": "9",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Principal Software Engineer - Full Stack",
+            "company": "Discover",
+            "salary": "",
+            "rating": "3.9",
+            "review_count": "3080",
+            "types": "Full-time",
+            "location": "Riverwoods, IL"
+        },
+        {
+            "title": "Lead Software Engineer \u2013 Defense Robotics",
+            "company": "Robotic Research LLC",
+            "salary": "From $100,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Clarksburg, MD"
+        },
+        {
+            "title": "Senior COBOL Developer (G67)",
+            "company": "Resource Management Associates LLC.",
+            "salary": "$45 an hour",
+            "rating": "4",
+            "review_count": "2",
+            "types": "Full-time, Temporary, Contract",
+            "location": "Atlanta, GA"
+        },
+        {
+            "title": "Software Development Engineer",
+            "company": "Amick Brown, LLC",
+            "salary": "",
+            "rating": "5",
+            "review_count": "2",
+            "types": "Full-time",
+            "location": "Santa Clara, CA"
+        },
+        {
+            "title": "iOS Developer",
+            "company": "Mark Technologies",
+            "salary": "$102,454 - $188,075 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time, Contract",
+            "location": "Seattle, WA"
+        },
+        {
+            "title": "Sr. Software Engineer",
+            "company": "Galloway and Chaplin Capital",
+            "salary": "",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "San Diego, CA"
+        },
+        {
+            "title": "Lead Software Engineer",
+            "company": "Topaz Labs",
+            "salary": "$100,000 - $200,000 a year",
+            "rating": "5",
+            "review_count": "1",
+            "types": "Full-time",
+            "location": "San Francisco, CA"
+        },
+        {
+            "title": "Senior Software Engineer",
+            "company": "Microsoft",
+            "salary": "",
+            "rating": "4.2",
+            "review_count": "7161",
+            "types": "Full-time",
+            "location": "Redmond, WA"
+        },
+        {
+            "title": "Senior Software Engineer",
+            "company": "POPi/o Mobile Video Cloud",
+            "salary": "$40 - $74 an hour",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Sandy, UT"
+        },
+        {
+            "title": "Java Software Engineer",
+            "company": "Zoom Video Communications, Inc.",
+            "salary": "",
+            "rating": "3.8",
+            "review_count": "5",
+            "types": "Full-time",
+            "location": "San Francisco Bay Area, CA"
+        },
+        {
+            "title": "Software Engineer - Golang",
+            "company": "Venturi Group",
+            "salary": "$160,000 - $200,000 a year",
+            "rating": "5",
+            "review_count": "8",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Mobile Developer - Flutter",
+            "company": "CAPCO",
+            "salary": "",
+            "rating": "3.4",
+            "review_count": "175",
+            "types": "",
+            "location": "Minneapolis, MN"
+        },
+        {
+            "title": "Software/Firmware Engineer",
+            "company": "CQENS Technologies Inc.",
+            "salary": "$90,000 - $150,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "California"
+        },
+        {
+            "title": "Applications Development Architect",
+            "company": "Buildertrend",
+            "salary": "",
+            "rating": "3.9",
+            "review_count": "16",
+            "types": "Full-time",
+            "location": "Omaha, NE"
+        },
+        {
+            "title": "Sr. Python Developer",
+            "company": "Piper Companies",
+            "salary": "$100,000 - $135,000 a year",
+            "rating": "4.5",
+            "review_count": "14",
+            "types": "",
+            "location": "Remote"
+        },
+        {
+            "title": "Sr Software Engineer, Catalog Platform - Tableau",
+            "company": "Salesforce",
+            "salary": "",
+            "rating": "4.3",
+            "review_count": "767",
+            "types": "Full-time",
+            "location": "Seattle, WA"
+        },
+        {
+            "title": "Full Stack Engineer",
+            "company": "Dataclay",
+            "salary": "$25 - $30 an hour",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Part-time, Contract",
+            "location": "Remote"
+        },
+        {
+            "title": "Web Developer",
+            "company": "TopSpot Internet Marketing",
+            "salary": "",
+            "rating": "2.5",
+            "review_count": "8",
+            "types": "",
+            "location": "Houston, TX"
+        },
+        {
+            "title": "Full Stack JavaScript Developer",
+            "company": "Insight Global",
+            "salary": "$130,000 - $165,000 a year",
+            "rating": "3.9",
+            "review_count": "2508",
+            "types": "Full-time",
+            "location": "Remote"
+        },
+        {
+            "title": "Software Test Engineer",
+            "company": "ASML",
+            "salary": "",
+            "rating": "3.9",
+            "review_count": "300",
+            "types": "",
+            "location": "San Diego, CA"
+        },
+        {
+            "title": "Senior ASP.NET Developer",
+            "company": "Defy Medical",
+            "salary": "$115,000 - $130,000 a year",
+            "rating": "2.9",
+            "review_count": "10",
+            "types": "Full-time",
+            "location": "Tampa, FL"
+        },
+        {
+            "title": "UI/UX Developer",
+            "company": "DeNOVO Solutions",
+            "salary": "",
+            "rating": "4.3",
+            "review_count": "3",
+            "types": "Full-time",
+            "location": "Annapolis Junction, MD"
+        },
+        {
+            "title": "java j2ee springboot developer (w2 only)",
+            "company": "infolob",
+            "salary": "Up to $62 an hour",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time, Contract",
+            "location": "Austin, TX"
+        },
+        {
+            "title": "Firmware Engineer",
+            "company": "Trek Bikes",
+            "salary": "",
+            "rating": "3.5",
+            "review_count": "8",
+            "types": "Full-time",
+            "location": "Waterloo, WI"
+        },
+        {
+            "title": "Sr. Software Automation Engineer, Cybersecurity",
+            "company": "PLLT VIRTUAL CONSULTANTS",
+            "salary": "From $110,000 a year",
+            "rating": "0",
+            "review_count": "0",
+            "types": "Full-time",
+            "location": "Chicago, IL"
+        },
+        {
+            "title": "Senior Software Engineer, Member Outreach",
+            "company": "98point6",
+            "salary": "",
+            "rating": "4",
+            "review_count": "2",
+            "types": "",
+            "location": "Washington State"
+        },
+        {
+            "title": "iOS/tvOS Engineer",
+            "company": "Showtime",
+            "salary": "",
+            "rating": "4",
+            "review_count": "73",
+            "types": "Full-time",
+            "location": "New York, NY"
+        }
+    ]
+}

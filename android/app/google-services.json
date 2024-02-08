@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695164720812",
+    "project_id": "developer-junior-planner-b7e90",
+    "storage_bucket": "developer-junior-planner-b7e90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695164720812:android:0157c56185fc736cbd3109",
+        "android_client_info": {
+          "package_name": "com.example.dev_junior_planner_final"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsqyeXaVD7iYb041M3NUkvQjeyKk4nCWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
