@@ -115,12 +115,13 @@ class signupScreen extends StatelessWidget {
                                 //   key: "name",
                                 //   value: texteditingControllerName.text,
                                 // );
+
                                 //Navigation bar
-                                Navigator.pushReplacement(
-                                    context,
+                                Navigator.of(context).pushAndRemoveUntil(
                                     MaterialPageRoute(
                                       builder: (context) => homebottonbar(),
-                                    ));
+                                    ),
+                                    (route) => false);
                               } on FirebaseAuthException catch (e) {
                                 if (e.code == 'weak-password') {
                                   Fluttertoast.showToast(
