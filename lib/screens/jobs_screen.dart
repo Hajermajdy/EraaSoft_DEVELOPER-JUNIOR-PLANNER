@@ -15,7 +15,12 @@ class jobScreen extends StatefulWidget {
 class _jobScreenState extends State<jobScreen> {
   final TextEditingController _searchController = TextEditingController();
   var searchValue = "";
-
+  var list = [
+    'title',
+    'company',
+    'location',
+  ];
+  String dropdownvalue = "title";
   List jobs = [];
   // CollectionReference job = FirebaseFirestore.instance.collection("jobs");
 
@@ -43,29 +48,53 @@ class _jobScreenState extends State<jobScreen> {
         elevation: 0,
         backgroundColor: ColorsApp.bgColor,
         title: Container(
-          child: TextField(
-            onChanged: (value) {
-              setState(() {
-                searchValue = value;
-                print(searchValue);
-                print("__________________________");
-              });
-            },
-            controller: _searchController,
-            style: TextStyle(
-              color: ColorsApp.fontColor,
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-            ),
-            decoration: InputDecoration(
-              hintText: 'Search...',
-              hintStyle: TextStyle(color: ColorsApp.fontColor),
-              border: OutlineInputBorder(borderSide: BorderSide.none),
-              prefixIcon: IconButton(
-                icon: Icon(Icons.search, color: ColorsApp.fontColor),
-                onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 250,
+                child: TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      searchValue = value;
+                      print(searchValue);
+                      print("__________________________");
+                    });
+                  },
+                  controller: _searchController,
+                  style: TextStyle(
+                    color: ColorsApp.fontColor,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  decoration: InputDecoration(
+                    hintText: 'Search...',
+                    hintStyle: TextStyle(color: ColorsApp.fontColor),
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                    prefixIcon: IconButton(
+                      icon: Icon(Icons.search, color: ColorsApp.fontColor),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
               ),
-            ),
+              DropdownButton(
+                iconEnabledColor: ColorsApp.fontColor,
+                padding: EdgeInsets.all(10),
+                value: dropdownvalue,
+                items: list.map((String items) {
+                  return DropdownMenuItem(
+                    value: items,
+                    child: Text(items),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownvalue = newValue!;
+                  });
+                },
+              ),
+            ],
           ),
         ),
         shape: ContinuousRectangleBorder(
@@ -78,7 +107,7 @@ class _jobScreenState extends State<jobScreen> {
         child: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
               .collection("jobs")
-              .orderBy("title")
+              .orderBy(dropdownvalue)
               .startAt([searchValue]).endAt(
                   [searchValue + "\uf8ff"]).snapshots(),
           builder: (context, snapshot) {
@@ -114,70 +143,90 @@ class _jobScreenState extends State<jobScreen> {
                       height: 3,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.business_center_rounded,
-                          size: 15,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.business_center_rounded,
+                                  size: 15,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  searchValue == ""
+                                      ? jobs[index]['company']
+                                      : snapshot.data!.docs[index]['company'],
+                                  style: TextStyle(fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.location_pin,
+                                  size: 15,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  searchValue == ""
+                                      ? jobs[index]['location']
+                                      : snapshot.data!.docs[index]['location'],
+                                  style: TextStyle(fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.monetization_on,
+                                  size: 15,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  searchValue == ""
+                                      ? jobs[index]['salary']
+                                      : snapshot.data!.docs[index]['salary'],
+                                  style: TextStyle(fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.access_time_filled_sharp,
+                                  size: 15,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  searchValue == ""
+                                      ? jobs[index]['types']
+                                      : snapshot.data!.docs[index]['types'],
+                                  style: TextStyle(fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          searchValue == ""
-                              ? jobs[index]['company']
-                              : snapshot.data!.docs[index]['company'],
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_pin,
-                          size: 15,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          searchValue == ""
-                              ? jobs[index]['location']
-                              : snapshot.data!.docs[index]['location'],
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.monetization_on,
-                          size: 15,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          searchValue == ""
-                              ? jobs[index]['salary']
-                              : snapshot.data!.docs[index]['salary'],
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.access_time_filled_sharp,
-                          size: 15,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          searchValue == ""
-                              ? jobs[index]['types']
-                              : snapshot.data!.docs[index]['types'],
-                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(ColorsApp.bgColor)),
+                          onPressed: () {},
+                          child: Text("Apply",
+                              style: TextStyle(
+                                color: ColorsApp.fontColor,
+                              )),
                         )
                       ],
                     ),

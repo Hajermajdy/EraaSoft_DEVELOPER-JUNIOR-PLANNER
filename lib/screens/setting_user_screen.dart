@@ -1,20 +1,50 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:flutter_application_1/components/text_edit.dart';
-import 'package:flutter_application_1/screens/edit_screen.dart';
 import 'package:flutter_application_1/screens/main_screen.dart';
-import 'package:flutter_application_1/helper/SP_helper.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter_application_1/src/app_root.dart';
+import 'package:open_app_file/open_app_file.dart';
 
-class settingUserScreen extends StatelessWidget {
+class settingUserScreen extends StatefulWidget {
   const settingUserScreen({super.key});
 
   @override
+  State<settingUserScreen> createState() => _settingUserScreenState();
+}
+
+class _settingUserScreenState extends State<settingUserScreen> {
+  PlatformFile? file;
+  late bool upload = false;
+
+  picksinglefile() async {
+    print(file == null);
+    print("_______Check___________");
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    if (result != null) {
+      file = result.files.first;
+
+      file == null ? false : OpenAppFile.open(file!.path.toString());
+
+      final path = 'CV/${file?.name}';
+      final FinalFile = File(file!.path!);
+      final ref = FirebaseStorage.instance.ref(path);
+      await ref.putFile(FinalFile);
+      print("___________DONE UPLOAD___________");
+      setState(() {
+        upload = true;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // print("Before init in setting screen ____________________");
-    sp_helper.init();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +83,7 @@ class settingUserScreen extends StatelessWidget {
                   width: 25,
                 ),
                 Text(
-                  sp_helper.getData(key: "name"),
+                  "Hager",
                   style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 20,
@@ -65,66 +95,28 @@ class settingUserScreen extends StatelessWidget {
           Container(
             margin: EdgeInsets.all(23),
             padding: EdgeInsets.all(30),
-            // decoration: BoxDecoration(boxShadow: [
-            //   BoxShadow(
-            //       blurRadius: 100,
-            //       color: Colors.grey,
-            //       spreadRadius: -40),
-            // ],
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
                     blurRadius: 100, color: Colors.grey, spreadRadius: -40),
               ],
               borderRadius: BorderRadius.circular(20),
-              color: ColorsApp.fontColor,
+              // color: ColorsApp.fontColor,
             ),
             child: Column(
               children: [
-                textEdit(text: "Email", icon: Icons.email),
+                GestureDetector(
+                  onTap: () {
+                    picksinglefile();
+                  },
+                  child: textEdit(
+                      text: upload ? file!.name : "UPLOAD CV ..",
+                      icon: Icons.picture_as_pdf),
+                ),
                 Divider(color: Colors.black),
                 SizedBox(
                   height: 10,
                 ),
-                textEdit(text: "Password", icon: Icons.password),
-                Divider(color: Colors.black),
-                SizedBox(
-                  height: 10,
-                ),
-                textEdit(text: "CV.pdf", icon: Icons.picture_as_pdf),
-                Divider(color: Colors.black),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => editScreen(),
-                          ),
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          Text("EDIT",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 5,
-                              )),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            size: 16,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                )
               ],
             ),
           ),
@@ -138,7 +130,7 @@ class settingUserScreen extends StatelessWidget {
                     blurRadius: 100, color: Colors.grey, spreadRadius: -40),
               ],
               borderRadius: BorderRadius.circular(20),
-              color: ColorsApp.fontColor,
+              // color: ColorsApp.fontColor,
             ),
             child: Column(
               children: [
@@ -158,7 +150,20 @@ class settingUserScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                textEdit(text: "DARK MODE", icon: Icons.light_mode_rounded),
+                GestureDetector(
+                  onTap: () {
+                    AppRoot.of(context).changeTheme(ThemeMode.dark);
+                  },
+                  child: textEdit(text: "Dark Mode", icon: Icons.dark_mode),
+                ),
+                Divider(color: Colors.black),
+                GestureDetector(
+                  onTap: () {
+                    AppRoot.of(context).changeTheme(ThemeMode.light);
+                  },
+                  child: textEdit(
+                      text: "Ligth Mode", icon: Icons.light_mode_rounded),
+                ),
                 Divider(color: Colors.black),
               ],
             ),

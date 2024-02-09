@@ -6,17 +6,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/screens/splash_screen.dart';
-import 'package:flutter_application_1/helper/SP_helper.dart';
 
 class AppRoot extends StatefulWidget {
   const AppRoot({super.key});
 
   @override
   State<AppRoot> createState() => _AppRootState();
+  static _AppRootState of(BuildContext context) =>
+      context.findAncestorStateOfType<_AppRootState>()!;
 }
 
 class _AppRootState extends State<AppRoot> {
   List _items = [];
+  ThemeMode _themeMode = ThemeMode.system;
 
   // load job data from file json and upload in firebase
 
@@ -67,14 +69,30 @@ class _AppRootState extends State<AppRoot> {
         print('_________User is signed in!_________');
       }
     });
-    // shered prefrence
-    sp_helper.init();
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(),
+      darkTheme: ThemeData.dark(),
+      themeMode: _themeMode,
       home: splashScreen(),
+      debugShowCheckedModeBanner: false,
     );
+  }
+
+  void changeTheme(ThemeMode themeMode) {
+    if (themeMode == ThemeMode.dark) {
+      print("dark");
+      setState(() {
+        _themeMode = themeMode;
+      });
+    } else {
+      print("ligth");
+      setState(() {
+        _themeMode = ThemeMode.light;
+      });
+    }
   }
 }

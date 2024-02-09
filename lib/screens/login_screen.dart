@@ -5,6 +5,7 @@ import 'package:flutter_application_1/components/textformfield.dart';
 import 'package:flutter_application_1/components/textformfield_password.dart';
 import 'package:flutter_application_1/regular%20expresion/validationEmail.dart';
 import 'package:flutter_application_1/screens/bottom_bar_screen.dart';
+import 'package:flutter_application_1/screens/forget_passord.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 // ignore: must_be_immutable
@@ -42,6 +43,24 @@ class loginScreen extends StatelessWidget {
                     icon: Icons.lock_open_rounded,
                     texteditingController: texteditingControllerPassword,
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => forgetPassword(),
+                            ),
+                          );
+                        },
+                        child: Text("Forget Password ?",
+                            style: TextStyle(
+                                color: ColorsApp.bgColor,
+                                fontWeight: FontWeight.w500)),
+                      )
+                    ],
+                  ),
                   SizedBox(
                     height: 28,
                   ),
@@ -75,7 +94,7 @@ class loginScreen extends StatelessWidget {
                               );
                             } else {
                               try {
-                                final credential = await FirebaseAuth.instance
+                                await FirebaseAuth.instance
                                     .signInWithEmailAndPassword(
                                         email: texteditingControllerEmail.text,
                                         password:

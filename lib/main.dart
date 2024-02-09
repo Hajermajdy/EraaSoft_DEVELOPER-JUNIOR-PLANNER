@@ -13,7 +13,9 @@ main() async {
       appId:
           "1:695164720812:android:0157c56185fc736cbd3109", //paste your app id here
       messagingSenderId: "695164720812", //paste your messagingSenderId here
-      projectId: "developer-junior-planner-b7e90", //paste your project id here
+      projectId: "developer-junior-planner-b7e90",
+      storageBucket:
+          "developer-junior-planner-b7e90.appspot.com", //paste your project id here
     ),
   );
 

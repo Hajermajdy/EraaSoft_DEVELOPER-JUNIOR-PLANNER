@@ -39,16 +39,6 @@ class _homeScreenState extends State<homeScreen> {
     }
   }
 
-  // void updatesearch(String value) async {
-  //   final search = await roadmaps.where("name", isEqualTo: value).get();
-  //   var roadMaps = [];
-  //   setState(() {
-  //     search.docs.map((element) {
-  //       roadMaps.add(element.data());
-  //     }).toList();
-  //   });
-  // }
-
   @override
   void initState() {
     super.initState();
@@ -58,7 +48,6 @@ class _homeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: ColorsApp.bgColor,
@@ -99,7 +88,6 @@ class _homeScreenState extends State<homeScreen> {
               bottom: 20,
               left: 20,
               right: 20),
-          // NOT UNDERSTANT SEARCH PART GOOD *****************
           child: StreamBuilder<QuerySnapshot>(
             stream: FirebaseFirestore.instance
                 .collection("RoadMaps")

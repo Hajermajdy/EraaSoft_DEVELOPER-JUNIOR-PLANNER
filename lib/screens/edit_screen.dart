@@ -1,11 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:flutter_application_1/components/textformfield.dart';
-import 'package:flutter_application_1/helper/SP_helper.dart';
-import 'package:flutter_application_1/screens/bottom_bar_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 // ignore: must_be_immutable
@@ -47,7 +44,7 @@ class editScreen extends StatelessWidget {
             ),
             textFormField(
               icon: Icons.person,
-              text: sp_helper.getData(key: "name"),
+              text: "sp_helper.getData(key: name)",
               texteditingController: texteditingControllerName,
             ),
             textFormField(
@@ -72,8 +69,8 @@ class editScreen extends StatelessWidget {
                           MaterialStatePropertyAll(ColorsApp.bgColor),
                     ),
                     onPressed: () async {
-                      sp_helper.updateDate(
-                          key: "name", value: texteditingControllerName.text);
+                      // sp_helper.updateDate(
+                      //     key: "name", value: texteditingControllerName.text);
                       Fluttertoast.showToast(
                         msg: 'Data Saved',
                         toastLength: Toast.LENGTH_LONG,
