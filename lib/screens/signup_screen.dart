@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:flutter_application_1/components/textformfield.dart';
 import 'package:flutter_application_1/components/textformfield_password.dart';
+import 'package:flutter_application_1/helper/cach_helper.dart';
 import 'package:flutter_application_1/screens/bottom_bar_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -110,11 +111,11 @@ class signupScreen extends StatelessWidget {
                                   email: texteditingControllerEmail.text,
                                   password: texteditingControllerPassword.text,
                                 );
-                                // // shared prefrence
-                                // sp_helper.saveData(
-                                //   key: "name",
-                                //   value: texteditingControllerName.text,
-                                // );
+                                // shared prefrence
+                                sp_Helper.saveData(
+                                  key: "name",
+                                  value: texteditingControllerName.text,
+                                );
 
                                 //Navigation bar
                                 Navigator.of(context).pushAndRemoveUntil(

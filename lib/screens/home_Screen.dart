@@ -122,7 +122,7 @@ class _homeScreenState extends State<homeScreen> {
                                   ? roadMaps[index]["image"]
                                   : snapshot.data!.docs[index]["image"],
                               width: 150,
-                              height: 150,
+                              height: 110,
                               fit: BoxFit.cover,
                             ),
                           ),

@@ -7,6 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:flutter_application_1/components/text_edit.dart';
+import 'package:flutter_application_1/helper/cach_helper.dart';
 import 'package:flutter_application_1/screens/main_screen.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_application_1/src/app_root.dart';
@@ -19,7 +20,8 @@ class settingUserScreen extends StatefulWidget {
   State<settingUserScreen> createState() => _settingUserScreenState();
 }
 
-class _settingUserScreenState extends State<settingUserScreen> {
+class _settingUserScreenState extends State<settingUserScreen>
+    with WidgetsBindingObserver {
   PlatformFile? file;
   late bool upload = false;
 
@@ -41,6 +43,22 @@ class _settingUserScreenState extends State<settingUserScreen> {
         upload = true;
       });
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+    print(sp_Helper.getData(key: "name"));
+    print("Done___________");
   }
 
   @override
@@ -83,7 +101,7 @@ class _settingUserScreenState extends State<settingUserScreen> {
                   width: 25,
                 ),
                 Text(
-                  "Hager",
+                  "",
                   style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 20,

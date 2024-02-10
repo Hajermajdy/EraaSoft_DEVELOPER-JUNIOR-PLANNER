@@ -52,7 +52,7 @@ class _jobScreenState extends State<jobScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 250,
+                width: 200,
                 child: TextField(
                   onChanged: (value) {
                     setState(() {
@@ -117,7 +117,7 @@ class _jobScreenState extends State<jobScreen> {
               itemBuilder: (context, index) => Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(top: 10),
-                height: 160,
+                height: 210,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: ColorsApp.bgColor,
@@ -218,18 +218,17 @@ class _jobScreenState extends State<jobScreen> {
                             ),
                           ],
                         ),
-                        ElevatedButton(
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStatePropertyAll(ColorsApp.bgColor)),
-                          onPressed: () {},
-                          child: Text("Apply",
-                              style: TextStyle(
-                                color: ColorsApp.fontColor,
-                              )),
-                        )
                       ],
                     ),
+                    ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(ColorsApp.bgColor),
+                      ),
+                      onPressed: () {},
+                      child: Text("Apply",
+                          style: TextStyle(color: ColorsApp.fontColor)),
+                    )
                   ],
                 ),
               ),
