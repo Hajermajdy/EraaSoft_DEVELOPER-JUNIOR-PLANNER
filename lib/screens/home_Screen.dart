@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class homeScreen extends StatefulWidget {
@@ -31,9 +32,9 @@ class _homeScreenState extends State<homeScreen> {
     });
   }
 
-  _launchURL(String path) async {
-    if (await canLaunch(path)) {
-      await launch(path);
+  _launchURL(Uri path) async {
+    if (await canLaunchUrl(path)) {
+      await launchUrl(path);
     } else {
       throw 'Could not launch $path';
     }
@@ -47,6 +48,9 @@ class _homeScreenState extends State<homeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
+    print(MediaQuery.of(context).size.width);
+    print("________________________");
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -63,7 +67,7 @@ class _homeScreenState extends State<homeScreen> {
             controller: _searchController,
             style: TextStyle(
               color: ColorsApp.fontColor,
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
@@ -83,11 +87,15 @@ class _homeScreenState extends State<homeScreen> {
                 bottomRight: Radius.circular(0))),
       ),
       body: Container(
+          color: Colors.blue,
+          // height: MediaQuery.of(context).size.height,
+          // width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.only(
-              // top: 0,
-              bottom: 20,
-              left: 20,
-              right: 20),
+            // top: 0,
+            bottom: 15.h,
+            left: 20.w,
+            right: 20.w,
+          ),
           child: StreamBuilder<QuerySnapshot>(
             stream: FirebaseFirestore.instance
                 .collection("RoadMaps")
@@ -102,27 +110,33 @@ class _homeScreenState extends State<homeScreen> {
                 itemBuilder: (context, index) {
                   // var roadMaps = snapshot.data?.docs;
                   return GestureDetector(
-                    onTap: () => _launchURL(roadMaps[index]["link"]),
+                    onTap: () => _launchURL(Uri.file(roadMaps[index]["link"])),
                     child: Container(
-                      margin: EdgeInsets.only(top: 18),
-                      decoration: BoxDecoration(boxShadow: [
-                        BoxShadow(
-                            blurRadius: 100,
-                            color: Colors.grey,
-                            spreadRadius: -40),
-                      ], borderRadius: BorderRadius.circular(20)),
+                      width: 220.w,
+                      height: 240.h,
+                      margin: EdgeInsets.only(top: 18.h),
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 100,
+                                color: Colors.grey,
+                                spreadRadius: -40),
+                          ],
+                          borderRadius: BorderRadius.circular(20)),
                       child: Column(
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20)),
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20),
+                            ),
                             child: Image.network(
                               searchValue == ""
                                   ? roadMaps[index]["image"]
                                   : snapshot.data!.docs[index]["image"],
-                              width: 150,
-                              height: 110,
+                              width: 130.w,
+                              height: 110.h,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -134,8 +148,8 @@ class _homeScreenState extends State<homeScreen> {
                                   bottomRight: Radius.circular(20)),
                               color: ColorsApp.bgColor,
                             ),
-                            width: 150,
-                            height: 30,
+                            width: 130.w,
+                            height: 29.h,
                             child: Text(
                                 searchValue == ""
                                     ? roadMaps[index]["name"]

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:flutter_application_1/screens/bottom_bar_screen.dart';
 import 'package:flutter_application_1/screens/main_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class splashScreen extends StatefulWidget {
@@ -55,7 +56,7 @@ class _splashScreenState extends State<splashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 130, left: 170),
+              margin: EdgeInsets.only(top: 130.h, left: 130.w),
               child: ListTile(
                 leading: LoadingAnimationWidget.horizontalRotatingDots(
                   color: ColorsApp.fontColor,

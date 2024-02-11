@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class jobScreen extends StatefulWidget {
   const jobScreen({super.key});
@@ -52,7 +53,7 @@ class _jobScreenState extends State<jobScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 200,
+                width: 200.w,
                 child: TextField(
                   onChanged: (value) {
                     setState(() {
@@ -64,7 +65,7 @@ class _jobScreenState extends State<jobScreen> {
                   controller: _searchController,
                   style: TextStyle(
                     color: ColorsApp.fontColor,
-                    fontSize: 15,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w500,
                   ),
                   decoration: InputDecoration(
@@ -103,7 +104,8 @@ class _jobScreenState extends State<jobScreen> {
                 bottomRight: Radius.circular(0))),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10, left: 30, right: 30),
+        padding:
+            EdgeInsets.only(top: 10.h, bottom: 10.h, left: 20.w, right: 20.w),
         child: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
               .collection("jobs")
@@ -117,7 +119,7 @@ class _jobScreenState extends State<jobScreen> {
               itemBuilder: (context, index) => Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(top: 10),
-                height: 210,
+                height: 210.h,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: ColorsApp.bgColor,
@@ -134,7 +136,7 @@ class _jobScreenState extends State<jobScreen> {
                           ? jobs[index]['title']
                           : snapshot.data!.docs[index]['title'],
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ),
                       maxLines: 2,
@@ -152,10 +154,10 @@ class _jobScreenState extends State<jobScreen> {
                               children: [
                                 Icon(
                                   Icons.business_center_rounded,
-                                  size: 15,
+                                  size: 15.w,
                                 ),
                                 SizedBox(
-                                  width: 10,
+                                  width: 10.w,
                                 ),
                                 Text(
                                   searchValue == ""
@@ -169,10 +171,10 @@ class _jobScreenState extends State<jobScreen> {
                               children: [
                                 Icon(
                                   Icons.location_pin,
-                                  size: 15,
+                                  size: 15.w,
                                 ),
                                 SizedBox(
-                                  width: 10,
+                                  width: 10.w,
                                 ),
                                 Text(
                                   searchValue == ""
@@ -186,10 +188,10 @@ class _jobScreenState extends State<jobScreen> {
                               children: [
                                 Icon(
                                   Icons.monetization_on,
-                                  size: 15,
+                                  size: 15.w,
                                 ),
                                 SizedBox(
-                                  width: 10,
+                                  width: 10.w,
                                 ),
                                 Text(
                                   searchValue == ""
@@ -203,10 +205,10 @@ class _jobScreenState extends State<jobScreen> {
                               children: [
                                 Icon(
                                   Icons.access_time_filled_sharp,
-                                  size: 15,
+                                  size: 15.w,
                                 ),
                                 SizedBox(
-                                  width: 10,
+                                  width: 10.w,
                                 ),
                                 Text(
                                   searchValue == ""

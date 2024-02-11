@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/screens/splash_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppRoot extends StatefulWidget {
   const AppRoot({super.key});
@@ -73,12 +74,19 @@ class _AppRootState extends State<AppRoot> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
-      themeMode: _themeMode,
-      home: splashScreen(),
-      debugShowCheckedModeBanner: false,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp(
+          theme: ThemeData(),
+          darkTheme: ThemeData.dark(),
+          themeMode: _themeMode,
+          home: splashScreen(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 

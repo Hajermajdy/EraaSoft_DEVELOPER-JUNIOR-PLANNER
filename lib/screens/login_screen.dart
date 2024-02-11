@@ -6,6 +6,7 @@ import 'package:flutter_application_1/components/textformfield_password.dart';
 import 'package:flutter_application_1/regular%20expresion/validationEmail.dart';
 import 'package:flutter_application_1/screens/bottom_bar_screen.dart';
 import 'package:flutter_application_1/screens/forget_passord.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 // ignore: must_be_immutable
@@ -16,22 +17,24 @@ class loginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(children: [
         Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 300, left: 20, right: 20),
+              margin: EdgeInsets.only(top: 190.h, left: 20.w, right: 20.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("LOGIN",
                       style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: ColorsApp.mainColor,
-                          letterSpacing: 5)),
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.bold,
+                        color: ColorsApp.mainColor,
+                        letterSpacing: 5,
+                      )),
                   SizedBox(
-                    height: 20,
+                    height: MediaQuery.of(context).size.height / 16,
                   ),
                   textFormField(
                     text: "Enter Your Email",
@@ -62,7 +65,7 @@ class loginScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 28,
+                    height: MediaQuery.of(context).size.height / 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -76,7 +79,7 @@ class loginScreen extends StatelessWidget {
                             Fluttertoast.showToast(
                               msg: "Please Fill All Fields",
                               toastLength: Toast.LENGTH_LONG,
-                              fontSize: 15,
+                              fontSize: 15.sp,
                               backgroundColor: ColorsApp.bgColor,
                               textColor: ColorsApp.fontColor,
                             );
@@ -88,7 +91,7 @@ class loginScreen extends StatelessWidget {
                               Fluttertoast.showToast(
                                 msg: "Please Enter a valid email address ",
                                 toastLength: Toast.LENGTH_LONG,
-                                fontSize: 15,
+                                fontSize: 15.sp,
                                 backgroundColor: ColorsApp.bgColor,
                                 textColor: ColorsApp.fontColor,
                               );
@@ -109,7 +112,7 @@ class loginScreen extends StatelessWidget {
                                   Fluttertoast.showToast(
                                     msg: 'No user found for that email ... ',
                                     toastLength: Toast.LENGTH_LONG,
-                                    fontSize: 15,
+                                    fontSize: 15.sp,
                                     backgroundColor: ColorsApp.bgColor,
                                     textColor: ColorsApp.fontColor,
                                   );
@@ -118,7 +121,7 @@ class loginScreen extends StatelessWidget {
                                     msg:
                                         "Wrong password provided for that user \n\n Plaese Try Again",
                                     toastLength: Toast.LENGTH_LONG,
-                                    fontSize: 15,
+                                    fontSize: 15.sp,
                                     backgroundColor: ColorsApp.bgColor,
                                     textColor: ColorsApp.fontColor,
                                   );
@@ -131,7 +134,7 @@ class loginScreen extends StatelessWidget {
                           //end
                         },
                         child: Container(
-                          width: 120,
+                          width: 120.w,
                           padding: EdgeInsets.only(
                               left: 17, right: 17, top: 10, bottom: 10),
                           decoration: BoxDecoration(

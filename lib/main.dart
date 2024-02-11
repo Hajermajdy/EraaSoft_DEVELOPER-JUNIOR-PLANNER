@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/helper/cach_helper.dart';
 import 'package:flutter_application_1/src/app_root.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -19,5 +20,6 @@ main() async {
     ),
   );
 
+  sp_Helper.init();
   runApp(AppRoot());
 }

@@ -7,10 +7,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
 import 'package:flutter_application_1/components/text_edit.dart';
-import 'package:flutter_application_1/helper/cach_helper.dart';
 import 'package:flutter_application_1/screens/main_screen.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_application_1/src/app_root.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:open_app_file/open_app_file.dart';
 
 class settingUserScreen extends StatefulWidget {
@@ -24,6 +24,7 @@ class _settingUserScreenState extends State<settingUserScreen>
     with WidgetsBindingObserver {
   PlatformFile? file;
   late bool upload = false;
+  // String username = sp_Helper.getData(key: "name");
 
   picksinglefile() async {
     print(file == null);
@@ -57,8 +58,8 @@ class _settingUserScreenState extends State<settingUserScreen>
     // TODO: implement dispose
     super.dispose();
     WidgetsBinding.instance.removeObserver(this);
-    print(sp_Helper.getData(key: "name"));
-    print("Done___________");
+    // print(sp_Helper.getData(key: "name"));
+    // print("Done___________");
   }
 
   @override
@@ -69,12 +70,13 @@ class _settingUserScreenState extends State<settingUserScreen>
         children: [
           Container(
             margin: EdgeInsets.only(
-                // top: 30,
-                bottom: 30,
-                left: 20,
-                right: 20),
+              // top: 30,
+              bottom: 30.h,
+              left: 20.w,
+              right: 20.w,
+            ),
             padding: EdgeInsets.only(left: 50),
-            height: 130,
+            height: 130.h,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: ColorsApp.mainColor),
@@ -92,26 +94,26 @@ class _settingUserScreenState extends State<settingUserScreen>
                             blurStyle: BlurStyle.inner)
                       ], borderRadius: BorderRadius.circular(150)),
                       child: ClipRRect(
-                          child: Image.asset("assets/user.png", width: 100),
+                          child: Image.asset("assets/user.png", width: 100.w),
                           borderRadius: BorderRadius.circular(150)),
                     ),
                   ],
                 ),
                 SizedBox(
-                  width: 25,
+                  width: MediaQuery.of(context).size.width / 16,
                 ),
                 Text(
-                  "",
+                  " ",
                   style: TextStyle(
                       fontWeight: FontWeight.w800,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       color: ColorsApp.fontColor),
                 )
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.all(23),
+            margin: EdgeInsets.all(23.w),
             padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
               boxShadow: [
@@ -133,7 +135,7 @@ class _settingUserScreenState extends State<settingUserScreen>
                 ),
                 Divider(color: Colors.black),
                 SizedBox(
-                  height: 10,
+                  height: 5.h,
                 ),
               ],
             ),
@@ -141,7 +143,7 @@ class _settingUserScreenState extends State<settingUserScreen>
           Container(
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(20),
-            width: 170,
+            width: 170.w,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -166,7 +168,7 @@ class _settingUserScreenState extends State<settingUserScreen>
                 ),
                 Divider(color: Colors.black),
                 SizedBox(
-                  height: 10,
+                  height: 10.h,
                 ),
                 GestureDetector(
                   onTap: () {
