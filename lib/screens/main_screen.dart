@@ -14,7 +14,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorsApp.bgColor,
       body: Container(
-        margin: EdgeInsets.only(top: 70.h),
+        margin: EdgeInsets.only(top: 90.h),
         child: Column(
           children: [
             ClipRRect(

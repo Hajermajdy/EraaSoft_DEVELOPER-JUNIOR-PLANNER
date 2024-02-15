@@ -3,7 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colors/colors_app.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class homeScreen extends StatefulWidget {
@@ -32,13 +32,28 @@ class _homeScreenState extends State<homeScreen> {
     });
   }
 
-  _launchURL(Uri path) async {
-    if (await canLaunchUrl(path)) {
-      await launchUrl(path);
-    } else {
-      throw 'Could not launch $path';
+  Future<void> _openURL(path) async {
+    Uri uri = Uri.parse(path);
+    print(path);
+    try {
+      if (await canLaunch(uri.toString())) {
+        print("Launching...");
+        await launch(uri.toString());
+        print("Done");
+      } else {
+        throw 'Could not launch $uri';
+      }
+    } catch (e) {
+      print('Error: $e');
     }
   }
+  // _launchURL(Uri path) async {
+  //   if (await canLaunchUrl(path)) {
+  //     await launchUrl(path);
+  //   } else {
+  //     throw 'Could not launch $path';
+  //   }
+  // }
 
   @override
   void initState() {
@@ -67,7 +82,7 @@ class _homeScreenState extends State<homeScreen> {
             controller: _searchController,
             style: TextStyle(
               color: ColorsApp.fontColor,
-              fontSize: 15.sp,
+              fontSize: 15,
               fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
@@ -87,14 +102,13 @@ class _homeScreenState extends State<homeScreen> {
                 bottomRight: Radius.circular(0))),
       ),
       body: Container(
-          color: Colors.blue,
           // height: MediaQuery.of(context).size.height,
           // width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.only(
             // top: 0,
-            bottom: 15.h,
-            left: 20.w,
-            right: 20.w,
+            bottom: 15,
+            left: 20,
+            right: 20,
           ),
           child: StreamBuilder<QuerySnapshot>(
             stream: FirebaseFirestore.instance
@@ -110,20 +124,17 @@ class _homeScreenState extends State<homeScreen> {
                 itemBuilder: (context, index) {
                   // var roadMaps = snapshot.data?.docs;
                   return GestureDetector(
-                    onTap: () => _launchURL(Uri.file(roadMaps[index]["link"])),
+                    onTap: () => _openURL(roadMaps[index]["link"]),
                     child: Container(
-                      width: 220.w,
-                      height: 240.h,
-                      margin: EdgeInsets.only(top: 18.h),
-                      decoration: BoxDecoration(
-                          color: Colors.amber,
-                          boxShadow: [
-                            BoxShadow(
-                                blurRadius: 100,
-                                color: Colors.grey,
-                                spreadRadius: -40),
-                          ],
-                          borderRadius: BorderRadius.circular(20)),
+                      width: 220,
+                      height: 240,
+                      margin: EdgeInsets.only(top: 18),
+                      decoration: BoxDecoration(boxShadow: [
+                        BoxShadow(
+                            blurRadius: 100,
+                            color: Colors.grey,
+                            spreadRadius: -40),
+                      ], borderRadius: BorderRadius.circular(20)),
                       child: Column(
                         children: [
                           ClipRRect(
@@ -135,8 +146,8 @@ class _homeScreenState extends State<homeScreen> {
                               searchValue == ""
                                   ? roadMaps[index]["image"]
                                   : snapshot.data!.docs[index]["image"],
-                              width: 130.w,
-                              height: 110.h,
+                              width: 130,
+                              height: 110,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -148,8 +159,8 @@ class _homeScreenState extends State<homeScreen> {
                                   bottomRight: Radius.circular(20)),
                               color: ColorsApp.bgColor,
                             ),
-                            width: 130.w,
-                            height: 29.h,
+                            width: 130,
+                            height: 29,
                             child: Text(
                                 searchValue == ""
                                     ? roadMaps[index]["name"]

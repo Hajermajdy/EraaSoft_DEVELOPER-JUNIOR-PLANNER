@@ -11,6 +11,7 @@ import 'package:flutter_application_1/screens/main_screen.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_application_1/src/app_root.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:open_app_file/open_app_file.dart';
 
 class settingUserScreen extends StatefulWidget {
@@ -39,6 +40,13 @@ class _settingUserScreenState extends State<settingUserScreen>
       final FinalFile = File(file!.path!);
       final ref = FirebaseStorage.instance.ref(path);
       await ref.putFile(FinalFile);
+      Fluttertoast.showToast(
+        msg: "Loading Done !",
+        toastLength: Toast.LENGTH_LONG,
+        fontSize: 15.sp,
+        backgroundColor: ColorsApp.bgColor,
+        textColor: ColorsApp.fontColor,
+      );
       print("___________DONE UPLOAD___________");
       setState(() {
         upload = true;
